@@ -502,15 +502,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         const artistName = item.uploaderName || item.author || (item.artists && item.artists[0] ? item.artists[0].name : 'Unknown Artist');
                         const thumbnail = item.thumbnail || '';
                         
-                        return \`
-                            <button type="button" class="existing-result-item" data-song="\${escapeAttr(songName)}" data-artist="\${escapeAttr(artistName)}">
-                                \${thumbnail ? \`<img src="\${escapeAttr(thumbnail)}" alt="cover" style="width: 40px; height: 40px; border-radius: 4px; margin-right: 1rem; object-fit: cover;">\` : ''}
+                        return `
+                            <button type="button" class="existing-result-item" data-song="${escapeAttr(songName)}" data-artist="${escapeAttr(artistName)}">
+                                ${thumbnail ? `<img src="${escapeAttr(thumbnail)}" alt="cover" style="width: 40px; height: 40px; border-radius: 4px; margin-right: 1rem; object-fit: cover;">` : ''}
                                 <span class="existing-result-label" style="text-align: left;">
-                                    <span class="existing-result-song">\${escapeHtml(songName)}</span>
-                                    <span class="existing-result-artist">\${escapeHtml(artistName)}</span>
+                                    <span class="existing-result-song">${escapeHtml(songName)}</span>
+                                    <span class="existing-result-artist">${escapeHtml(artistName)}</span>
                                 </span>
                             </button>
-                        \`;
+                        `;
                     }).join('');
                     resultsContainer.style.display = 'block';
 
